@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://d3issrkknmkg6"]
+
+[ext_resource type="Script" uid="uid://dahb5g7b1nxq6" path="res://character.gd" id="1_oolk3"]
+[ext_resource type="Texture2D" uid="uid://dofqrixex0v3f" path="res://brackeys_platformer_assets/sprites/knight.png" id="2_7ig0a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcuhw"]
+size = Vector2(13, 18)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7ig0a"]
+radius = 25.0
+
+[node name="Player" type="CharacterBody2D" unique_id=786098214]
+script = ExtResource("1_oolk3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=406380419]
+texture = ExtResource("2_7ig0a")
+region_enabled = true
+region_rect = Rect2(9.416477, 8.522215, 13.089245, 20.055208)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=365221191]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_lcuhw")
+
+[node name="AdrenalineArea" type="Area2D" parent="." unique_id=1362623925]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AdrenalineArea" unique_id=1447649462]
+light_mask = 2
+shape = SubResource("CircleShape2D_7ig0a")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=76523860]
+target_position = Vector2(0, -50)
+collision_mask = 2
