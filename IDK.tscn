@@ -3,10 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://c6j7imugi2mso" path="res://car.tscn" id="1_8167n"]
 [ext_resource type="PackedScene" uid="uid://d3issrkknmkg6" path="res://Character.tscn" id="2_yr67b"]
 
-[node name="Node2D" type="Node2D" unique_id=927120701]
+[node name="Node2D" type="Node2D" unique_id=518317731]
 
 [node name="Car" parent="." unique_id=683508603 instance=ExtResource("1_8167n")]
-position = Vector2(43, 48)
+position = Vector2(159, 9)
 
 [node name="Player" parent="." unique_id=786098214 instance=ExtResource("2_yr67b")]
-position = Vector2(7, 9)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1379122422]

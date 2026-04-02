@@ -8,7 +8,7 @@ func _on_timer_timeout():
 	var car = car_scene.instantiate()
 	
 	# 2. Pick a random X position (adjust numbers to your road width)
-	var random_x = randf_range(100, 500)
+	var random_x = randf_range(1, 1)
 	car.global_position = Vector2(random_x, -50) # Start just above the screen
 	
 	# 3. Add it to the game

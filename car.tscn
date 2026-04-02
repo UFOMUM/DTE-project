@@ -23,7 +23,6 @@ shape = SubResource("RectangleShape2D_06lh1")
 
 [node name="CarSpawner" type="Node2D" parent="." unique_id=1494125593]
 script = ExtResource("3_k61xc")
-car_scene = null
 
 [node name="Timer" type="Timer" parent="CarSpawner" unique_id=1814751539]
 wait_time = 1.5
