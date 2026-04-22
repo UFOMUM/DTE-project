@@ -3,30 +3,39 @@
 [ext_resource type="Script" uid="uid://dahb5g7b1nxq6" path="res://character.gd" id="1_oolk3"]
 [ext_resource type="Texture2D" uid="uid://dofqrixex0v3f" path="res://brackeys_platformer_assets/sprites/knight.png" id="2_7ig0a"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcuhw"]
-size = Vector2(13, 18)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_7ig0a"]
-radius = 25.0
+radius = 9.0
 
-[node name="Player" type="CharacterBody2D" unique_id=786098214]
+[sub_resource type="CircleShape2D" id="CircleShape2D_lcuhw"]
+radius = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_atbvg"]
+radius = 40.0
+
+[node name="Player" type="CharacterBody2D" unique_id=700636799]
+collision_mask = 2
 script = ExtResource("1_oolk3")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=406380419]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=521358732]
 texture = ExtResource("2_7ig0a")
 region_enabled = true
-region_rect = Rect2(9.416477, 8.522215, 13.089245, 20.055208)
+region_rect = Rect2(9.0265045, 8.61104, 13.261883, 19.560568)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=365221191]
-position = Vector2(-0.5, 0)
-shape = SubResource("RectangleShape2D_lcuhw")
-
-[node name="AdrenalineArea" type="Area2D" parent="." unique_id=1362623925]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AdrenalineArea" unique_id=1447649462]
-light_mask = 2
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1881870884]
 shape = SubResource("CircleShape2D_7ig0a")
 
-[node name="RayCast2D" type="RayCast2D" parent="." unique_id=76523860]
-target_position = Vector2(0, -50)
+[node name="AdrenalineZone" type="Area2D" parent="." unique_id=1058236911]
+collision_layer = 0
 collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AdrenalineZone" unique_id=1352836257]
+shape = SubResource("CircleShape2D_lcuhw")
+
+[node name="ShoveZone" type="Area2D" parent="." unique_id=1547888552]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShoveZone" unique_id=22401828]
+shape = SubResource("CircleShape2D_atbvg")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1195906444]

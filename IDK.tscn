@@ -1,14 +1,21 @@
 [gd_scene format=3 uid="uid://dysoj6kln12ea"]
 
 [ext_resource type="PackedScene" uid="uid://c6j7imugi2mso" path="res://car.tscn" id="1_8167n"]
+[ext_resource type="Script" uid="uid://v7dp67kldn22" path="res://traffic_spawner.gd" id="2_8167n"]
 [ext_resource type="PackedScene" uid="uid://d3issrkknmkg6" path="res://Character.tscn" id="2_yr67b"]
 
 [node name="Node2D" type="Node2D" unique_id=518317731]
 
-[node name="Car" parent="." unique_id=683508603 instance=ExtResource("1_8167n")]
-position = Vector2(159, 9)
-
 [node name="Player" parent="." unique_id=786098214 instance=ExtResource("2_yr67b")]
 position = Vector2(0, 1)
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1379122422]
+[node name="TrafficSpawner" type="Node2D" parent="." unique_id=286813260]
+script = ExtResource("2_8167n")
+car_scene = ExtResource("1_8167n")
+
+[node name="SpawnTimer" type="Timer" parent="TrafficSpawner" unique_id=2099158912]
+autostart = true
+
+[node name="DifficultyTimer" type="Timer" parent="TrafficSpawner" unique_id=91076662]
+wait_time = 15.0
+autostart = true

@@ -2,28 +2,20 @@
 
 [ext_resource type="Script" uid="uid://c5adlj6td2okj" path="res://car.gd" id="1_uoj53"]
 [ext_resource type="Texture2D" uid="uid://b73g36on5pvp4" path="res://brackeys_platformer_assets/sprites/slime_green.png" id="2_k61xc"]
-[ext_resource type="Script" uid="uid://dais2yni3mxnv" path="res://car_spawner.gd" id="3_k61xc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_06lh1"]
-size = Vector2(12, 11)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uoj53"]
+size = Vector2(14, 12)
 
-[node name="Car" type="Area2D" unique_id=683508603]
+[node name="Car" type="Area2D" unique_id=1000876108]
+collision_layer = 2
 script = ExtResource("1_uoj53")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2014114485]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=422434761]
 texture = ExtResource("2_k61xc")
 region_enabled = true
-region_rect = Rect2(77.607864, 11.864662, 12.762329, 12.691559)
+region_rect = Rect2(5.083946, 35.978813, 13.806145, 12.139923)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=156788495]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_06lh1")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=176957795]
+shape = SubResource("RectangleShape2D_uoj53")
 
-[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2074857669]
-
-[node name="CarSpawner" type="Node2D" parent="." unique_id=1494125593]
-script = ExtResource("3_k61xc")
-
-[node name="Timer" type="Timer" parent="CarSpawner" unique_id=1814751539]
-wait_time = 1.5
-autostart = true
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1359107936]
