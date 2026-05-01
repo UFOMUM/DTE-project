@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c0uwc3ajgpsc2"]
+
+[ext_resource type="FontFile" uid="uid://b6a1gu2cur82m" path="res://brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_chhgw"]
+
+[node name="Node2D" type="Node2D" unique_id=1203460943]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=155134689]
+
+[node name="Label" type="Label" parent="." unique_id=1263336048]
+offset_left = -392.0
+offset_top = -56.0
+offset_right = 383.0
+offset_bottom = 45.0
+theme_override_fonts/font = ExtResource("1_chhgw")
+theme_override_font_sizes/font_size = 100
+text = "Game Over"

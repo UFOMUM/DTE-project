@@ -40,17 +40,28 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hac7"]
-size = Vector2(10, 15)
+size = Vector2(10, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7bn3"]
+size = Vector2(10, 14)
 
 [node name="Enemy" type="Node2D" unique_id=113761565]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=665271197]
+position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_6do27")
 autoplay = "default"
-frame_progress = 0.1624923
+frame_progress = 0.63119704
 
 [node name="Kill Zone" parent="." unique_id=43065350 instance=ExtResource("2_s7bn3")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=862583611]
-position = Vector2(0, 4.5)
+position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_2hac7")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1312971347]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=969331927]
+position = Vector2(0, -7)
+shape = SubResource("RectangleShape2D_s7bn3")
