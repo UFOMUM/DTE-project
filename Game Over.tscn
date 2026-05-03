@@ -1,16 +1,80 @@
 [gd_scene format=3 uid="uid://c0uwc3ajgpsc2"]
 
 [ext_resource type="FontFile" uid="uid://b6a1gu2cur82m" path="res://brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_chhgw"]
+[ext_resource type="Script" uid="uid://bvre50wrh0w8" path="res://label.gd" id="2_fb13l"]
+
+[sub_resource type="Animation" id="Animation_fb13l"]
+resource_name = "Game On"
+length = 11.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 5, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["Game Over", "That wasn't
+ Fun.", "I guess I'll 
+have to bring
+ you back.", "Good Luck."]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(11),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0],
+"method": &"_on_area_2d_mouse_shape_exited"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_oonl0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Game Over"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sk1k3"]
+_data = {
+&"Game On": SubResource("Animation_fb13l"),
+&"RESET": SubResource("Animation_oonl0")
+}
 
 [node name="Node2D" type="Node2D" unique_id=1203460943]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=155134689]
 
 [node name="Label" type="Label" parent="." unique_id=1263336048]
-offset_left = -392.0
-offset_top = -56.0
-offset_right = 383.0
-offset_bottom = 45.0
+offset_left = -576.0
+offset_top = -320.0
+offset_right = 576.0
+offset_bottom = 320.0
 theme_override_fonts/font = ExtResource("1_chhgw")
 theme_override_font_sizes/font_size = 100
 text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_fb13l")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label" unique_id=847850822]
+libraries/ = SubResource("AnimationLibrary_sk1k3")
+autoplay = &"Game On"
+
+[connection signal="mouse_entered" from="Label" to="Label" method="_on_mouse_entered"]

@@ -45,6 +45,9 @@ size = Vector2(11, 16)
 [sub_resource type="CircleShape2D" id="CircleShape2D_kpjcp"]
 radius = 15.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_kne1u"]
+radius = 21.023796
+
 [node name="Player" type="CharacterBody2D" unique_id=1246910048]
 collision_layer = 3
 script = ExtResource("1_kpjcp")
@@ -66,4 +69,11 @@ collision_mask = 4
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_kpjcp")
 
+[node name="Area2D2" type="Area2D" parent="." unique_id=842599590]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1736462269]
+position = Vector2(0, 4)
+shape = SubResource("CircleShape2D_kne1u")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

@@ -5,6 +5,8 @@ extends CharacterBody2D
 
 func _on_area_2d_body_entered(body):
 	game_manger.add_point()
+func _on_area_2d_2_body_entered(body):
+	game_manger.add_point()
 
 func _physics_process(_delta: float) -> void:
 	# 1. Get the input direction using the built-in Vector2 helper
