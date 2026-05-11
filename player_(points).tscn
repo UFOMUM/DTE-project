@@ -1,22 +1,22 @@
-[gd_scene format=3 uid="uid://bhucq2oentwud"]
+[gd_scene format=3 uid="uid://bhh0helluuc5l"]
 
-[ext_resource type="Script" uid="uid://7p1av0w6x5xo" path="res://player.gd" id="1_kpjcp"]
-[ext_resource type="Texture2D" uid="uid://dofqrixex0v3f" path="res://brackeys_platformer_assets/sprites/knight.png" id="2_kne1u"]
+[ext_resource type="Script" uid="uid://7p1av0w6x5xo" path="res://Player_(Points).gd" id="1_uck3w"]
+[ext_resource type="Texture2D" uid="uid://dofqrixex0v3f" path="res://brackeys_platformer_assets/sprites/knight.png" id="2_hkiw0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e80uo"]
-atlas = ExtResource("2_kne1u")
+atlas = ExtResource("2_hkiw0")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cxr5p"]
-atlas = ExtResource("2_kne1u")
+atlas = ExtResource("2_hkiw0")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tdg3f"]
-atlas = ExtResource("2_kne1u")
+atlas = ExtResource("2_hkiw0")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dtqjt"]
-atlas = ExtResource("2_kne1u")
+atlas = ExtResource("2_hkiw0")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5ncpa"]
@@ -48,33 +48,33 @@ radius = 15.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_kne1u"]
 radius = 21.023796
 
-[node name="Player" type="CharacterBody2D" unique_id=1246910048]
+[node name="Player (Points)" type="CharacterBody2D" unique_id=1246910048]
 scale = Vector2(0.64853716, 0.85586065)
 collision_layer = 3
-script = ExtResource("1_kpjcp")
+script = ExtResource("1_uck3w")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1771853932]
+[node name="Animation Runing" type="AnimatedSprite2D" parent="." unique_id=1771853932]
 sprite_frames = SubResource("SpriteFrames_5ncpa")
 autoplay = "default"
 frame_progress = 0.39872965
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1161911456]
+[node name="Player Kill Collision" type="CollisionShape2D" parent="." unique_id=1161911456]
 position = Vector2(-0.5, 4)
 shape = SubResource("RectangleShape2D_wi0c6")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=914854825]
+[node name="+2 Points" type="Area2D" parent="." unique_id=914854825]
 collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1945167557]
+[node name="+2 Points Collision" type="CollisionShape2D" parent="+2 Points" unique_id=1945167557]
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_kpjcp")
 
-[node name="Area2D2" type="Area2D" parent="." unique_id=842599590]
+[node name="+1 Point" type="Area2D" parent="." unique_id=842599590]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1736462269]
+[node name="+1 Point Collision" type="CollisionShape2D" parent="+1 Point" unique_id=1736462269]
 position = Vector2(0, 4)
 shape = SubResource("CircleShape2D_kne1u")
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="+2 Points" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="+1 Point" to="." method="_on_area_2d_2_body_entered"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bq6sl6xnaqdy7"]
 
-[ext_resource type="Script" uid="uid://bo15wi0waapyw" path="res://character_body_2d.gd" id="1_au3y3"]
+[ext_resource type="Script" uid="uid://bo15wi0waapyw" path="res://Player_(No_Points).gd" id="1_au3y3"]
 [ext_resource type="Texture2D" uid="uid://dofqrixex0v3f" path="res://brackeys_platformer_assets/sprites/knight.png" id="2_fso2f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ehw7d"]
@@ -42,17 +42,17 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0oqky"]
 size = Vector2(10.5, 12)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=762009336]
+[node name="Player (No Points)" type="CharacterBody2D" unique_id=762009336]
 collision_mask = 3
 script = ExtResource("1_au3y3")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1651236034]
+[node name="Animation Runing" type="AnimatedSprite2D" parent="." unique_id=1651236034]
 position = Vector2(0, 7)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_2rkre")
 autoplay = "default"
 frame_progress = 0.39032057
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=603373593]
+[node name="Player Kill Collision" type="CollisionShape2D" parent="." unique_id=603373593]
 position = Vector2(-0.25, 10)
 shape = SubResource("RectangleShape2D_0oqky")

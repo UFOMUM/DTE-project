@@ -1,15 +1,15 @@
 [gd_scene format=3 uid="uid://cti7dm4ldyejs"]
 
-[ext_resource type="Script" uid="uid://dfi7wycb5itna" path="res://game_manger.gd" id="1_t88pq"]
-[ext_resource type="PackedScene" uid="uid://bhucq2oentwud" path="res://Player.tscn" id="1_wbfu4"]
-[ext_resource type="FontFile" uid="uid://b6a1gu2cur82m" path="res://brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="2_r0x5m"]
-[ext_resource type="Texture2D" uid="uid://du4o1h2ogdtvx" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="2_xkndl"]
-[ext_resource type="PackedScene" uid="uid://bnahdsg1dbrjt" path="res://Kill_zone.tscn" id="3_u44n3"]
-[ext_resource type="PackedScene" uid="uid://boe4lrti11266" path="res://Enemy.tscn" id="4_sb48q"]
-[ext_resource type="PackedScene" uid="uid://ds5tkma1h5avj" path="res://boom.tscn" id="7_3mrqo"]
+[ext_resource type="Script" uid="uid://dfi7wycb5itna" path="res://game_manger.gd" id="1_10xxw"]
+[ext_resource type="FontFile" uid="uid://b6a1gu2cur82m" path="res://brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="2_3q7lx"]
+[ext_resource type="Texture2D" uid="uid://du4o1h2ogdtvx" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="3_75uuw"]
+[ext_resource type="PackedScene" uid="uid://bhh0helluuc5l" path="res://player_(points).tscn" id="4_10xxw"]
+[ext_resource type="PackedScene" uid="uid://n4uwefskk8sx" path="res://kill_zone_(Fake).tscn" id="5_10xxw"]
+[ext_resource type="PackedScene" uid="uid://boe4lrti11266" path="res://Enemy_(Fake).tscn" id="6_kg83i"]
+[ext_resource type="PackedScene" uid="uid://ds5tkma1h5avj" path="res://Boom_(Fake).tscn" id="7_pbt08"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u44n3"]
-texture = ExtResource("2_xkndl")
+texture = ExtResource("3_75uuw")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -473,18 +473,18 @@ _data = {
 &"move 11": SubResource("Animation_qjyg3")
 }
 
-[node name="Game" type="Node2D" unique_id=837545624]
+[node name="Game (Fake)" type="Node2D" unique_id=837545624]
 
 [node name="GameManger" type="Node" parent="." unique_id=1024584478]
 unique_name_in_owner = true
-script = ExtResource("1_t88pq")
+script = ExtResource("1_10xxw")
 
 [node name="Label" type="Label" parent="GameManger" unique_id=72231391]
 offset_left = -48.0
 offset_top = -32.0
 offset_right = -8.0
 offset_bottom = -9.0
-theme_override_fonts/font = ExtResource("2_r0x5m")
+theme_override_fonts/font = ExtResource("2_3q7lx")
 text = "Score="
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=196384845]
@@ -501,69 +501,70 @@ layer_0/tile_data = PackedInt32Array(327676, 65536, 15, 262140, 65536, 14, 19660
 layer_1/name = "Layer0"
 layer_1/tile_data = PackedInt32Array(-131073, 262144, 1, 327679, 262144, 1, -196608, 262144, 1, -196607, 262144, 1, -196606, 262144, 1, -196604, 262144, 1, -196603, 262144, 1, -196605, 262144, 1, -196602, 262144, 1, -196601, 262144, 1, -196600, 262144, 1, -196599, 262144, 1, -196598, 262144, 1, 262144, 262144, 1, 262145, 262144, 1, 262146, 262144, 1, 262147, 262144, 1, 262148, 262144, 1, 262149, 262144, 1, 262150, 262144, 1, 262151, 262144, 1, 262152, 262144, 1, 262153, 262144, 1, 262154, 262144, 1, 327678, 262144, 1, 327677, 262144, 1, 327676, 262144, 1, -131074, 262144, 1, -131075, 262144, 1, -131076, 262144, 1)
 
-[node name="Player" parent="." unique_id=1246910048 instance=ExtResource("1_wbfu4")]
-position = Vector2(24, 16)
-collision_mask = 3
+[node name="Player (Points)" parent="." unique_id=1246910048 instance=ExtResource("4_10xxw")]
 
-[node name="Kill Zone" parent="." unique_id=43065350 instance=ExtResource("3_u44n3")]
-position = Vector2(0, 8)
+[node name="Kill Zone (Fake)" parent="." unique_id=43065350 instance=ExtResource("5_10xxw")]
+position = Vector2(-1.9073486e-06, -1.9073486e-06)
+scale = Vector2(1, 1.0000001)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=2133761725]
-position = Vector2(-64, 24)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Kill Zone (Fake)" unique_id=2133761725]
+position = Vector2(-64.00001, 31.999998)
 shape = SubResource("WorldBoundaryShape2D_sb48q")
 
-[node name="Enemy" parent="." unique_id=113761565 instance=ExtResource("4_sb48q")]
+[node name="Enemys" type="Node" parent="." unique_id=716164634]
+
+[node name="Enemy" parent="Enemys" unique_id=113761565 instance=ExtResource("6_kg83i")]
 position = Vector2(184, -16)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy" unique_id=1570959499]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy" unique_id=1570959499]
 libraries/ = SubResource("AnimationLibrary_r0x5m")
 autoplay = &"Move 6"
 
-[node name="Enemy2" parent="." unique_id=1090441941 instance=ExtResource("4_sb48q")]
+[node name="Enemy2" parent="Enemys" unique_id=1090441941 instance=ExtResource("6_kg83i")]
 position = Vector2(216, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy2" unique_id=504508401]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy2" unique_id=504508401]
 libraries/ = SubResource("AnimationLibrary_2vekm")
 autoplay = &"Move 5"
 
-[node name="Enemy3" parent="." unique_id=1270671176 instance=ExtResource("4_sb48q")]
+[node name="Enemy3" parent="Enemys" unique_id=1270671176 instance=ExtResource("6_kg83i")]
 position = Vector2(184, 16)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy3" unique_id=1547792353]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy3" unique_id=1547792353]
 libraries/ = SubResource("AnimationLibrary_gwjdr")
 autoplay = &"Move 4"
 
-[node name="Enemy4" parent="." unique_id=1401585196 instance=ExtResource("4_sb48q")]
+[node name="Enemy4" parent="Enemys" unique_id=1401585196 instance=ExtResource("6_kg83i")]
 position = Vector2(248, 32)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy4" unique_id=1363965404]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy4" unique_id=1363965404]
 libraries/ = SubResource("AnimationLibrary_qjyg3")
 autoplay = &"Move 3"
 
-[node name="Enemy7" parent="." unique_id=1417289445 instance=ExtResource("4_sb48q")]
+[node name="Enemy7" parent="Enemys" unique_id=1417289445 instance=ExtResource("6_kg83i")]
 position = Vector2(200, 32)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy7" unique_id=1925463382]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy7" unique_id=1925463382]
 libraries/ = SubResource("AnimationLibrary_yx171")
 autoplay = &"Move 7"
 
-[node name="Enemy5" parent="." unique_id=1023477841 instance=ExtResource("4_sb48q")]
+[node name="Enemy5" parent="Enemys" unique_id=1023477841 instance=ExtResource("6_kg83i")]
 position = Vector2(232, 48)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy5" unique_id=1596909963]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy5" unique_id=1596909963]
 libraries/ = SubResource("AnimationLibrary_wuoie")
 autoplay = &"Move 2"
 
-[node name="Enemy6" parent="." unique_id=1174978248 instance=ExtResource("4_sb48q")]
+[node name="Enemy6" parent="Enemys" unique_id=1174978248 instance=ExtResource("6_kg83i")]
 position = Vector2(200, 64)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy6" unique_id=1355417281]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy6" unique_id=1355417281]
 libraries/ = SubResource("AnimationLibrary_hmewc")
 autoplay = &"Move 1"
 
-[node name="Boom" parent="." unique_id=181842211 instance=ExtResource("7_3mrqo")]
+[node name="Boom" parent="Enemys" unique_id=181842211 instance=ExtResource("7_pbt08")]
 position = Vector2(56, -64)
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="Boom" unique_id=1798487429]
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Enemys/Boom" unique_id=1798487429]
 libraries/ = SubResource("AnimationLibrary_elkpi")
 autoplay = &"move 11"

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c0uwc3ajgpsc2"]
 
-[ext_resource type="FontFile" uid="uid://b6a1gu2cur82m" path="res://brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_chhgw"]
-[ext_resource type="Script" uid="uid://bvre50wrh0w8" path="res://label.gd" id="2_fb13l"]
+[ext_resource type="FontFile" uid="uid://b6a1gu2cur82m" path="res://brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_o8od6"]
+[ext_resource type="Script" uid="uid://bvre50wrh0w8" path="res://Text_Fake_Death.gd" id="2_rn48p"]
 
 [sub_resource type="Animation" id="Animation_fb13l"]
 resource_name = "Game On"
@@ -57,25 +57,25 @@ _data = {
 &"RESET": SubResource("Animation_oonl0")
 }
 
-[node name="Node2D" type="Node2D" unique_id=1203460943]
+[node name="Game Over (Fake)" type="Node2D" unique_id=1203460943]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=155134689]
+[node name="Camera" type="Camera2D" parent="." unique_id=155134689]
 
-[node name="Label" type="Label" parent="." unique_id=1263336048]
+[node name="Text" type="Label" parent="." unique_id=1263336048]
 offset_left = -576.0
 offset_top = -320.0
 offset_right = 576.0
 offset_bottom = 320.0
-theme_override_fonts/font = ExtResource("1_chhgw")
+theme_override_fonts/font = ExtResource("1_o8od6")
 theme_override_font_sizes/font_size = 100
 text = "Game Over"
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("2_fb13l")
+script = ExtResource("2_rn48p")
 metadata/_edit_use_anchors_ = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Label" unique_id=847850822]
+[node name="Kill" type="AnimationPlayer" parent="Text" unique_id=847850822]
 libraries/ = SubResource("AnimationLibrary_sk1k3")
 autoplay = &"Game On"
 
-[connection signal="mouse_entered" from="Label" to="Label" method="_on_mouse_entered"]
+[connection signal="mouse_entered" from="Text" to="Text" method="_on_mouse_entered"]

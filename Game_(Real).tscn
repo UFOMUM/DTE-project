@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://roq1xiipsbc8"]
 
-[ext_resource type="PackedScene" uid="uid://bq6sl6xnaqdy7" path="res://character2.tscn" id="1_rvrwk"]
-[ext_resource type="Texture2D" uid="uid://du4o1h2ogdtvx" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="1_xlfqx"]
-[ext_resource type="PackedScene" uid="uid://bnahdsg1dbrjt" path="res://Kill_zone.tscn" id="3_qyt3m"]
-[ext_resource type="PackedScene" uid="uid://dhufj25rcxyp6" path="res://enemy 2.tscn" id="4_xlfqx"]
-[ext_resource type="PackedScene" uid="uid://ds5tkma1h5avj" path="res://boom.tscn" id="5_rvrwk"]
+[ext_resource type="Texture2D" uid="uid://du4o1h2ogdtvx" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="1_fku75"]
+[ext_resource type="PackedScene" uid="uid://bq6sl6xnaqdy7" path="res://Player_(No_Points).tscn" id="2_w7w0j"]
+[ext_resource type="PackedScene" uid="uid://dgqwrawy4maq7" path="res://kill_zone_(Real).tscn" id="3_wux8i"]
+[ext_resource type="PackedScene" uid="uid://dhufj25rcxyp6" path="res://Enemy_(Real).tscn" id="4_egh3n"]
+[ext_resource type="PackedScene" uid="uid://dn2oj57m3nakx" path="res://Boom_(Real).tscn" id="5_e5dsb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lqsby"]
-texture = ExtResource("1_xlfqx")
+texture = ExtResource("1_fku75")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -538,7 +538,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(56, -64)]
+"values": [Vector2(56, 88)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ftthg"]
@@ -563,84 +563,85 @@ layer_0/tile_data = PackedInt32Array(327676, 65536, 15, 262140, 65536, 14, 19660
 layer_1/name = "Layer0"
 layer_1/tile_data = PackedInt32Array(-131073, 262144, 1, 327679, 262144, 1, -196608, 262144, 1, -196607, 262144, 1, -196606, 262144, 1, -196604, 262144, 1, -196603, 262144, 1, -196605, 262144, 1, -196602, 262144, 1, -196601, 262144, 1, -196600, 262144, 1, -196599, 262144, 1, -196598, 262144, 1, 262144, 262144, 1, 262145, 262144, 1, 262146, 262144, 1, 262147, 262144, 1, 262148, 262144, 1, 262149, 262144, 1, 262150, 262144, 1, 262151, 262144, 1, 262152, 262144, 1, 262153, 262144, 1, 262154, 262144, 1, 327678, 262144, 1, 327677, 262144, 1, 327676, 262144, 1, -131074, 262144, 1, -131075, 262144, 1, -131076, 262144, 1)
 
-[node name="CharacterBody2D" parent="." unique_id=762009336 instance=ExtResource("1_rvrwk")]
+[node name="CharacterBody2D" parent="." unique_id=762009336 instance=ExtResource("2_w7w0j")]
 
-[node name="Kill Zone" parent="." unique_id=43065350 instance=ExtResource("3_qyt3m")]
-position = Vector2(0, 8)
+[node name="Kill Zone (Real)" parent="." unique_id=43065350 instance=ExtResource("3_wux8i")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=1210502480]
-position = Vector2(-64, 24)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone (Real)" unique_id=1210502480]
+position = Vector2(-64, 32)
 shape = SubResource("WorldBoundaryShape2D_5d3kt")
 
-[node name="Enemy" parent="." unique_id=113761565 instance=ExtResource("4_xlfqx")]
+[node name="Enemys" type="Node" parent="." unique_id=583560352]
+
+[node name="Enemy" parent="Enemys" unique_id=113761565 instance=ExtResource("4_egh3n")]
 position = Vector2(200, 64)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy" unique_id=932927543]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy" unique_id=932927543]
 libraries/ = SubResource("AnimationLibrary_qyt3m")
 autoplay = &"Move 6"
 
-[node name="Enemy2" parent="." unique_id=1569325241 instance=ExtResource("4_xlfqx")]
+[node name="Enemy2" parent="Enemys" unique_id=1569325241 instance=ExtResource("4_egh3n")]
 position = Vector2(184, -16)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy2" unique_id=1653500400]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy2" unique_id=1653500400]
 libraries/ = SubResource("AnimationLibrary_jerom")
 autoplay = &"Move 1"
 
-[node name="Enemy3" parent="." unique_id=1808921364 instance=ExtResource("4_xlfqx")]
+[node name="Enemy3" parent="Enemys" unique_id=1808921364 instance=ExtResource("4_egh3n")]
 position = Vector2(216, 0)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy3" unique_id=1495002233]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy3" unique_id=1495002233]
 libraries/ = SubResource("AnimationLibrary_l3vb5")
 autoplay = &"Move 2"
 
-[node name="Enemy4" parent="." unique_id=949554918 instance=ExtResource("4_xlfqx")]
+[node name="Enemy4" parent="Enemys" unique_id=949554918 instance=ExtResource("4_egh3n")]
 position = Vector2(232, 48)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy4" unique_id=308557149]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy4" unique_id=308557149]
 root_node = NodePath("../../Enemy3")
 libraries/ = SubResource("AnimationLibrary_02un7")
 autoplay = &"Move 3"
 
-[node name="Enemy5" parent="." unique_id=261876131 instance=ExtResource("4_xlfqx")]
+[node name="Enemy5" parent="Enemys" unique_id=261876131 instance=ExtResource("4_egh3n")]
 position = Vector2(248, 32)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy5" unique_id=1946226407]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy5" unique_id=1946226407]
 root_node = NodePath("../../Enemy3")
 libraries/ = SubResource("AnimationLibrary_py6f0")
 autoplay = &"Move 4"
 
-[node name="Enemy9" parent="." unique_id=1312693974 instance=ExtResource("4_xlfqx")]
+[node name="Enemy9" parent="Enemys" unique_id=1312693974 instance=ExtResource("4_egh3n")]
 position = Vector2(200, 32)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy9" unique_id=428907463]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy9" unique_id=428907463]
 libraries/ = SubResource("AnimationLibrary_qi6ts")
 autoplay = &"Move 10"
 
-[node name="Enemy6" parent="." unique_id=591336851 instance=ExtResource("4_xlfqx")]
+[node name="Enemy6" parent="Enemys" unique_id=591336851 instance=ExtResource("4_egh3n")]
 position = Vector2(184, 16)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy6" unique_id=1848806365]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy6" unique_id=1848806365]
 root_node = NodePath("../../Enemy3")
 libraries/ = SubResource("AnimationLibrary_gej5v")
 autoplay = &"Move 5"
 
-[node name="Enemy7" parent="." unique_id=925577736 instance=ExtResource("4_xlfqx")]
+[node name="Enemy7" parent="Enemys" unique_id=925577736 instance=ExtResource("4_egh3n")]
 position = Vector2(184, -48)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy7" unique_id=40574000]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy7" unique_id=40574000]
 libraries/ = SubResource("AnimationLibrary_5d3kt")
 autoplay = &"Move 7"
 
-[node name="Enemy8" parent="." unique_id=345255054 instance=ExtResource("4_xlfqx")]
+[node name="Enemy8" parent="Enemys" unique_id=345255054 instance=ExtResource("4_egh3n")]
 position = Vector2(184, 96)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy8" unique_id=1949315951]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy8" unique_id=1949315951]
 libraries/ = SubResource("AnimationLibrary_0kyhm")
 autoplay = &"Move 8"
 
-[node name="Boom" parent="." unique_id=181842211 instance=ExtResource("5_rvrwk")]
-position = Vector2(56, -64)
+[node name="Boom 2" parent="Enemys" unique_id=181842211 instance=ExtResource("5_e5dsb")]
+position = Vector2(56, 88)
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="Boom" unique_id=543599633]
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Enemys/Boom 2" unique_id=1874578913]
 libraries/ = SubResource("AnimationLibrary_ftthg")
 autoplay = &"Move 11"

@@ -1,10 +1,7 @@
 [gd_scene format=3 uid="uid://ds5tkma1h5avj"]
 
 [ext_resource type="Texture2D" uid="uid://b73g36on5pvp4" path="res://brackeys_platformer_assets/sprites/slime_green.png" id="1_37ygf"]
-[ext_resource type="PackedScene" uid="uid://dgqwrawy4maq7" path="res://kill_zone 2.tscn" id="2_yvxa8"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3suhf"]
-size = Vector2(384, 15)
+[ext_resource type="PackedScene" uid="uid://n4uwefskk8sx" path="res://kill_zone_(Fake).tscn" id="1_rp2rg"]
 
 [sub_resource type="Animation" id="Animation_jtuo6"]
 resource_name = "Kill"
@@ -13,7 +10,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Kill Zone/CollisionShape2D:disabled")
+tracks/0/path = NodePath("Kill Zone (Fake)/Kill Collision:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -25,7 +22,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Kill Zone/ColorRect:visible")
+tracks/1/path = NodePath("Kill Zone (Fake)/ColorRect:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -40,7 +37,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Kill Zone/CollisionShape2D:disabled")
+tracks/0/path = NodePath("Kill Zone (Fake)/Kill Collision:disabled")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -52,7 +49,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Kill Zone/ColorRect:visible")
+tracks/1/path = NodePath("Kill Zone (Fake)/ColorRect:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -67,6 +64,9 @@ _data = {
 &"Kill": SubResource("Animation_jtuo6"),
 &"RESET": SubResource("Animation_vr171")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3suhf"]
+size = Vector2(384, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ubxla"]
 atlas = ExtResource("1_37ygf")
@@ -104,19 +104,15 @@ animations = [{
 "speed": 2.0
 }]
 
-[node name="Boom" type="Node2D" unique_id=181842211]
+[node name="Boom (Fake)" type="Node2D" unique_id=181842211]
 
-[node name="Kill Zone" parent="." unique_id=43065350 instance=ExtResource("2_yvxa8")]
+[node name="Kill" type="AnimationPlayer" parent="." unique_id=1997803060]
+libraries/ = SubResource("AnimationLibrary_rsrkw")
+autoplay = &"Kill"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=1717260487]
-modulate = Color(0.15256056, 0.99999994, 0.97431785, 1)
-self_modulate = Color(7.70092e-07, 0.5815513, 0.60028905, 1)
-top_level = true
-position = Vector2(0, 4.5)
-shape = SubResource("RectangleShape2D_3suhf")
-debug_color = Color(1, 1, 1, 0.41960785)
+[node name="Kill Zone (Fake)" parent="." unique_id=43065350 instance=ExtResource("1_rp2rg")]
 
-[node name="ColorRect" type="ColorRect" parent="Kill Zone" unique_id=1892751444]
+[node name="ColorRect" type="ColorRect" parent="Kill Zone (Fake)" unique_id=1892751444]
 modulate = Color(1, 0, 0, 1)
 self_modulate = Color(1, 0, 0, 1)
 offset_left = -192.0
@@ -125,11 +121,15 @@ offset_right = 192.0
 offset_bottom = 12.0
 color = Color(1, 0, 0, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1997803060]
-libraries/ = SubResource("AnimationLibrary_rsrkw")
-autoplay = &"Kill"
+[node name="Kill Collision" type="CollisionShape2D" parent="Kill Zone (Fake)" unique_id=1717260487]
+modulate = Color(0.15256056, 0.99999994, 0.97431785, 1)
+self_modulate = Color(7.70092e-07, 0.5815513, 0.60028905, 1)
+top_level = true
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_3suhf")
+debug_color = Color(1, 1, 1, 0.41960785)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=553343861]
+[node name="Animation Moving" type="AnimatedSprite2D" parent="." unique_id=553343861]
 sprite_frames = SubResource("SpriteFrames_hvkis")
 autoplay = "default"
 frame_progress = 0.38591495

@@ -1,22 +1,22 @@
-[gd_scene format=3 uid="uid://dhufj25rcxyp6"]
+[gd_scene format=3 uid="uid://boe4lrti11266"]
 
-[ext_resource type="Texture2D" uid="uid://do74cgfvtfq3g" path="res://brackeys_platformer_assets/sprites/slime_purple.png" id="1_q0xb5"]
-[ext_resource type="PackedScene" uid="uid://dgqwrawy4maq7" path="res://kill_zone 2.tscn" id="2_chsd3"]
+[ext_resource type="Texture2D" uid="uid://do74cgfvtfq3g" path="res://brackeys_platformer_assets/sprites/slime_purple.png" id="1_tt7e2"]
+[ext_resource type="PackedScene" uid="uid://n4uwefskk8sx" path="res://kill_zone_(Fake).tscn" id="2_s7bn3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s7bn3"]
-atlas = ExtResource("1_q0xb5")
+atlas = ExtResource("1_tt7e2")
 region = Rect2(0, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2hac7"]
-atlas = ExtResource("1_q0xb5")
+atlas = ExtResource("1_tt7e2")
 region = Rect2(24, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e6d4v"]
-atlas = ExtResource("1_q0xb5")
+atlas = ExtResource("1_tt7e2")
 region = Rect2(48, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qp131"]
-atlas = ExtResource("1_q0xb5")
+atlas = ExtResource("1_tt7e2")
 region = Rect2(72, 24, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6do27"]
@@ -45,23 +45,23 @@ size = Vector2(10, 14)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7bn3"]
 size = Vector2(10, 14)
 
-[node name="Enemy" type="Node2D" unique_id=113761565]
+[node name="Enemy (Fake)" type="Node2D" unique_id=113761565]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=665271197]
+[node name="Animation Moving" type="AnimatedSprite2D" parent="." unique_id=665271197]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_6do27")
 autoplay = "default"
 frame_progress = 0.63119704
 
-[node name="Kill Zone" parent="." unique_id=43065350 instance=ExtResource("2_chsd3")]
+[node name="Kill Zone Fake" parent="." unique_id=43065350 instance=ExtResource("2_s7bn3")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone" unique_id=862583611]
+[node name="Kill Collision" type="CollisionShape2D" parent="Kill Zone Fake" unique_id=862583611]
 position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_2hac7")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1312971347]
+[node name="Score Body" type="StaticBody2D" parent="." unique_id=1312971347]
 collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=969331927]
+[node name="Score Body Collision" type="CollisionShape2D" parent="Score Body" unique_id=969331927]
 position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_s7bn3")
