@@ -49,6 +49,7 @@ radius = 15.0
 radius = 21.023796
 
 [node name="Player" type="CharacterBody2D" unique_id=1246910048]
+scale = Vector2(0.64853716, 0.85586065)
 collision_layer = 3
 script = ExtResource("1_kpjcp")
 

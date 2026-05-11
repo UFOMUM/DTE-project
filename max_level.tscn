@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://roq1xiipsbc8"]
 
+[ext_resource type="PackedScene" uid="uid://bq6sl6xnaqdy7" path="res://character2.tscn" id="1_rvrwk"]
 [ext_resource type="Texture2D" uid="uid://du4o1h2ogdtvx" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="1_xlfqx"]
-[ext_resource type="PackedScene" uid="uid://bhucq2oentwud" path="res://Player.tscn" id="2_rvrwk"]
 [ext_resource type="PackedScene" uid="uid://bnahdsg1dbrjt" path="res://Kill_zone.tscn" id="3_qyt3m"]
-[ext_resource type="PackedScene" uid="uid://boe4lrti11266" path="res://Enemy.tscn" id="4_4djjo"]
+[ext_resource type="PackedScene" uid="uid://dhufj25rcxyp6" path="res://enemy 2.tscn" id="4_xlfqx"]
+[ext_resource type="PackedScene" uid="uid://ds5tkma1h5avj" path="res://boom.tscn" id="5_rvrwk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lqsby"]
 texture = ExtResource("1_xlfqx")
@@ -166,6 +167,386 @@ sources/0 = SubResource("TileSetAtlasSource_lqsby")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5d3kt"]
 normal = Vector2(1, 0)
 
+[sub_resource type="Animation" id="Animation_xlfqx"]
+resource_name = "Move 6"
+length = 2.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(200, 64), Vector2(-120, 64)]
+}
+
+[sub_resource type="Animation" id="Animation_rvrwk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(200, 64)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qyt3m"]
+_data = {
+&"Move 6": SubResource("Animation_xlfqx"),
+&"RESET": SubResource("Animation_rvrwk")
+}
+
+[sub_resource type="Animation" id="Animation_ghjeb"]
+resource_name = "Move 1"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(184, -16), Vector2(-136, -16)]
+}
+
+[sub_resource type="Animation" id="Animation_nxdhw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(184, -16)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jerom"]
+_data = {
+&"Move 1": SubResource("Animation_ghjeb"),
+&"RESET": SubResource("Animation_nxdhw")
+}
+
+[sub_resource type="Animation" id="Animation_0kyhm"]
+resource_name = "Move 2"
+length = 2.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(216, 0), Vector2(-104, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pqwrm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(216, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l3vb5"]
+_data = {
+&"Move 2": SubResource("Animation_0kyhm"),
+&"RESET": SubResource("Animation_pqwrm")
+}
+
+[sub_resource type="Animation" id="Animation_wda6y"]
+resource_name = "Move 3"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Enemy4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(232, 48), Vector2(-88, 48)]
+}
+
+[sub_resource type="Animation" id="Animation_q4mqc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Enemy4:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(232, 48)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_02un7"]
+_data = {
+&"Move 3": SubResource("Animation_wda6y"),
+&"RESET": SubResource("Animation_q4mqc")
+}
+
+[sub_resource type="Animation" id="Animation_5d3kt"]
+resource_name = "Move 4"
+length = 2.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Enemy5:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(248, 32), Vector2(-72, 32)]
+}
+
+[sub_resource type="Animation" id="Animation_ftvxu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Enemy5:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(248, 32)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_py6f0"]
+_data = {
+&"Move 4": SubResource("Animation_5d3kt"),
+&"RESET": SubResource("Animation_ftvxu")
+}
+
+[sub_resource type="Animation" id="Animation_l3vb5"]
+resource_name = "Move 10"
+length = 2.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(200, 32), Vector2(-120, 32)]
+}
+
+[sub_resource type="Animation" id="Animation_jerom"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(200, 32)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qi6ts"]
+_data = {
+&"Move 10": SubResource("Animation_l3vb5"),
+&"RESET": SubResource("Animation_jerom")
+}
+
+[sub_resource type="Animation" id="Animation_4djjo"]
+resource_name = "Move 5"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Enemy6:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(184, 16), Vector2(-136, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_lqsby"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Enemy6:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(184, 16)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gej5v"]
+_data = {
+&"Move 5": SubResource("Animation_4djjo"),
+&"RESET": SubResource("Animation_lqsby")
+}
+
+[sub_resource type="Animation" id="Animation_qyt3m"]
+resource_name = "Move 7"
+length = 2.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(184, -48), Vector2(-72, 96)]
+}
+
+[sub_resource type="Animation" id="Animation_gej5v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(184, -48)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5d3kt"]
+_data = {
+&"Move 7": SubResource("Animation_qyt3m"),
+&"RESET": SubResource("Animation_gej5v")
+}
+
+[sub_resource type="Animation" id="Animation_py6f0"]
+resource_name = "Move 8"
+length = 2.5
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(184, 96), Vector2(-72, -48)]
+}
+
+[sub_resource type="Animation" id="Animation_02un7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(184, 96)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0kyhm"]
+_data = {
+&"Move 8": SubResource("Animation_py6f0"),
+&"RESET": SubResource("Animation_02un7")
+}
+
+[sub_resource type="Animation" id="Animation_qi6ts"]
+resource_name = "Move 11"
+length = 10.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(56, 88), Vector2(56, -64)]
+}
+
+[sub_resource type="Animation" id="Animation_8oy63"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(56, -64)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ftthg"]
+_data = {
+&"Move 11": SubResource("Animation_qi6ts"),
+&"RESET": SubResource("Animation_8oy63")
+}
+
 [node name="Max Level" type="Node2D" unique_id=331939102]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=696715852]
@@ -178,12 +559,11 @@ position = Vector2(0, -1)
 tile_set = SubResource("TileSet_gej5v")
 format = 2
 layer_0/name = "Layer1"
-layer_0/tile_data = PackedInt32Array(327676, 65536, 15, 262140, 65536, 14, 196604, 65536, 13, 131068, 65536, 13, 65532, 65536, 13, -4, 65536, 13, -65540, 65536, 12, -131076, 65536, 11, -131075, 65536, 11, -131074, 65536, 11, -131073, 65536, 11, -196608, 65536, 11, -196607, 65536, 11, -196606, 65536, 11, -196605, 65536, 11, -196604, 65536, 11, -196603, 65536, 11, -196602, 65536, 11, -196601, 65536, 11, -196600, 65536, 11, -196599, 65536, 11, -196598, 65536, 11, -131062, 65536, 12, -131063, 65536, 12, -131064, 65536, 12, -131065, 65536, 12, -131066, 65536, 12, -131067, 65536, 12, -131068, 65536, 12, -131069, 65536, 12, -131070, 65536, 12, -131071, 65536, 12, -131072, 65536, 12, -65537, 65536, 12, -65538, 65536, 12, -65539, 65536, 12, -3, 65536, 13, -2, 65536, 13, -1, 65536, 13, -65536, 65536, 13, 0, 65536, 13, 1, 65536, 13, 2, 65536, 13, 3, 65536, 13, 4, 65536, 13, 5, 65536, 13, 6, 65536, 13, 7, 65536, 13, 8, 65536, 13, 9, 65536, 13, 10, 65536, 13, -65526, 65536, 13, -65527, 65536, 13, -65528, 65536, 13, -65529, 65536, 13, -65530, 65536, 13, -65531, 65536, 13, -65532, 65536, 13, -65533, 65536, 13, -65534, 65536, 13, -65535, 65536, 13, 65534, 65536, 13, 65533, 65536, 13, 65535, 65536, 13, 65546, 65536, 13, 65545, 65536, 13, 65544, 65536, 13, 65543, 65536, 13, 65542, 65536, 13, 65541, 65536, 13, 65540, 65536, 13, 65539, 65536, 13, 65538, 65536, 13, 65537, 65536, 13, 65536, 65536, 13, 131071, 65536, 13, 131070, 65536, 13, 131069, 65536, 13, 196605, 65536, 13, 196606, 65536, 13, 196607, 65536, 13, 131072, 65536, 13, 131073, 65536, 13, 131074, 65536, 13, 131075, 65536, 13, 131076, 65536, 13, 131077, 65536, 13, 131078, 65536, 13, 131079, 65536, 13, 131080, 65536, 13, 131081, 65536, 13, 131082, 65536, 13, 196618, 65536, 14, 196617, 65536, 14, 196616, 65536, 14, 196615, 65536, 14, 196614, 65536, 14, 196613, 65536, 14, 196612, 65536, 14, 196611, 65536, 14, 196610, 65536, 14, 196609, 65536, 14, 196608, 65536, 14, 262143, 65536, 14, 262142, 65536, 14, 262141, 65536, 14, 327677, 65536, 15, 327678, 65536, 15, 327679, 65536, 15, 262144, 65536, 15, 262145, 65536, 15, 262146, 65536, 15, 262147, 65536, 15, 262148, 65536, 15, 262149, 65536, 15, 262150, 65536, 15, 262151, 65536, 15, 262152, 65536, 15, 262153, 65536, 15, 262154, 65536, 15, -131061, 0, 9, -65523, 0, 9, 11, 0, 9, 65551, 0, 9, 131086, 0, 9, 196620, 0, 9, 131067, 0, 9, 196602, 0, 9, 262136, 0, 9, -7, 0, 9, -65545, 0, 9, 65527, 0, 9)
+layer_0/tile_data = PackedInt32Array(327676, 65536, 15, 262140, 65536, 14, 196604, 65536, 13, 131068, 65536, 13, 65532, 65536, 13, -4, 65536, 13, -65540, 65536, 12, -131076, 65536, 11, -131075, 65536, 11, -131074, 65536, 11, -131073, 65536, 11, -196608, 65536, 11, -196607, 65536, 11, -196606, 65536, 11, -196605, 65536, 11, -196604, 65536, 11, -196603, 65536, 11, -196602, 65536, 11, -196601, 65536, 11, -196600, 65536, 11, -196599, 65536, 11, -196598, 65536, 11, -131062, 65536, 12, -131063, 65536, 12, -131064, 65536, 12, -131065, 65536, 12, -131066, 65536, 12, -131067, 65536, 12, -131068, 65536, 12, -131069, 65536, 12, -131070, 65536, 12, -131071, 65536, 12, -131072, 65536, 12, -65537, 65536, 12, -65538, 65536, 12, -65539, 65536, 12, -3, 65536, 13, -2, 65536, 13, -1, 65536, 13, -65536, 65536, 13, 0, 65536, 13, 1, 65536, 13, 2, 65536, 13, 3, 65536, 13, 4, 65536, 13, 5, 65536, 13, 6, 65536, 13, 7, 65536, 13, 8, 65536, 13, 9, 65536, 13, 10, 65536, 13, -65526, 65536, 13, -65527, 65536, 13, -65528, 65536, 13, -65529, 65536, 13, -65530, 65536, 13, -65531, 65536, 13, -65532, 65536, 13, -65533, 65536, 13, -65534, 65536, 13, -65535, 65536, 13, 65534, 65536, 13, 65533, 65536, 13, 65535, 65536, 13, 65546, 65536, 13, 65545, 65536, 13, 65544, 65536, 13, 65543, 65536, 13, 65542, 65536, 13, 65541, 65536, 13, 65540, 65536, 13, 65539, 65536, 13, 65538, 65536, 13, 65537, 65536, 13, 65536, 65536, 13, 131071, 65536, 13, 131070, 65536, 13, 131069, 65536, 13, 196605, 65536, 13, 196606, 65536, 13, 196607, 65536, 13, 131072, 65536, 13, 131073, 65536, 13, 131074, 65536, 13, 131075, 65536, 13, 131076, 65536, 13, 131077, 65536, 13, 131078, 65536, 13, 131079, 65536, 13, 131080, 65536, 13, 131081, 65536, 13, 131082, 65536, 13, 196618, 65536, 14, 196617, 65536, 14, 196616, 65536, 14, 196615, 65536, 14, 196614, 65536, 14, 196613, 65536, 14, 196612, 65536, 14, 196611, 65536, 14, 196610, 65536, 14, 196609, 65536, 14, 196608, 65536, 14, 262143, 65536, 14, 262142, 65536, 14, 262141, 65536, 14, 327677, 65536, 15, 327678, 65536, 15, 327679, 65536, 15, 262144, 65536, 15, 262145, 65536, 15, 262146, 65536, 15, 262147, 65536, 15, 262148, 65536, 15, 262149, 65536, 15, 262150, 65536, 15, 262151, 65536, 15, 262152, 65536, 15, 262153, 65536, 15, 262154, 65536, 15, -131061, 0, 9, -65523, 0, 9, 11, 0, 9, 65551, 0, 9, 131086, 0, 9, 196620, 0, 9, 131067, 0, 9, 196602, 0, 9, 262136, 0, 9, -7, 0, 9, -65545, 0, 9, 65527, 0, 9, 65548, 0, 9, 131064, 0, 9)
 layer_1/name = "Layer0"
 layer_1/tile_data = PackedInt32Array(-131073, 262144, 1, 327679, 262144, 1, -196608, 262144, 1, -196607, 262144, 1, -196606, 262144, 1, -196604, 262144, 1, -196603, 262144, 1, -196605, 262144, 1, -196602, 262144, 1, -196601, 262144, 1, -196600, 262144, 1, -196599, 262144, 1, -196598, 262144, 1, 262144, 262144, 1, 262145, 262144, 1, 262146, 262144, 1, 262147, 262144, 1, 262148, 262144, 1, 262149, 262144, 1, 262150, 262144, 1, 262151, 262144, 1, 262152, 262144, 1, 262153, 262144, 1, 262154, 262144, 1, 327678, 262144, 1, 327677, 262144, 1, 327676, 262144, 1, -131074, 262144, 1, -131075, 262144, 1, -131076, 262144, 1)
 
-[node name="Player" parent="." unique_id=1246910048 instance=ExtResource("2_rvrwk")]
-position = Vector2(24, 16)
+[node name="CharacterBody2D" parent="." unique_id=762009336 instance=ExtResource("1_rvrwk")]
 
 [node name="Kill Zone" parent="." unique_id=43065350 instance=ExtResource("3_qyt3m")]
 position = Vector2(0, 8)
@@ -192,22 +572,75 @@ position = Vector2(0, 8)
 position = Vector2(-64, 24)
 shape = SubResource("WorldBoundaryShape2D_5d3kt")
 
-[node name="Enemy" parent="." unique_id=113761565 instance=ExtResource("4_4djjo")]
+[node name="Enemy" parent="." unique_id=113761565 instance=ExtResource("4_xlfqx")]
+position = Vector2(200, 64)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy" unique_id=932927543]
+libraries/ = SubResource("AnimationLibrary_qyt3m")
+autoplay = &"Move 6"
+
+[node name="Enemy2" parent="." unique_id=1569325241 instance=ExtResource("4_xlfqx")]
 position = Vector2(184, -16)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy" unique_id=633932497]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy2" unique_id=1653500400]
+libraries/ = SubResource("AnimationLibrary_jerom")
+autoplay = &"Move 1"
 
-[node name="Enemy2" parent="." unique_id=792491912 instance=ExtResource("4_4djjo")]
+[node name="Enemy3" parent="." unique_id=1808921364 instance=ExtResource("4_xlfqx")]
 position = Vector2(216, 0)
 
-[node name="Enemy3" parent="." unique_id=131568272 instance=ExtResource("4_4djjo")]
-position = Vector2(184, 16)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy3" unique_id=1495002233]
+libraries/ = SubResource("AnimationLibrary_l3vb5")
+autoplay = &"Move 2"
 
-[node name="Enemy4" parent="." unique_id=1580451958 instance=ExtResource("4_4djjo")]
-position = Vector2(248, 32)
-
-[node name="Enemy5" parent="." unique_id=987970383 instance=ExtResource("4_4djjo")]
+[node name="Enemy4" parent="." unique_id=949554918 instance=ExtResource("4_xlfqx")]
 position = Vector2(232, 48)
 
-[node name="Enemy6" parent="." unique_id=929477215 instance=ExtResource("4_4djjo")]
-position = Vector2(200, 64)
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy4" unique_id=308557149]
+root_node = NodePath("../../Enemy3")
+libraries/ = SubResource("AnimationLibrary_02un7")
+autoplay = &"Move 3"
+
+[node name="Enemy5" parent="." unique_id=261876131 instance=ExtResource("4_xlfqx")]
+position = Vector2(248, 32)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy5" unique_id=1946226407]
+root_node = NodePath("../../Enemy3")
+libraries/ = SubResource("AnimationLibrary_py6f0")
+autoplay = &"Move 4"
+
+[node name="Enemy9" parent="." unique_id=1312693974 instance=ExtResource("4_xlfqx")]
+position = Vector2(200, 32)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy9" unique_id=428907463]
+libraries/ = SubResource("AnimationLibrary_qi6ts")
+autoplay = &"Move 10"
+
+[node name="Enemy6" parent="." unique_id=591336851 instance=ExtResource("4_xlfqx")]
+position = Vector2(184, 16)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy6" unique_id=1848806365]
+root_node = NodePath("../../Enemy3")
+libraries/ = SubResource("AnimationLibrary_gej5v")
+autoplay = &"Move 5"
+
+[node name="Enemy7" parent="." unique_id=925577736 instance=ExtResource("4_xlfqx")]
+position = Vector2(184, -48)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy7" unique_id=40574000]
+libraries/ = SubResource("AnimationLibrary_5d3kt")
+autoplay = &"Move 7"
+
+[node name="Enemy8" parent="." unique_id=345255054 instance=ExtResource("4_xlfqx")]
+position = Vector2(184, 96)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Enemy8" unique_id=1949315951]
+libraries/ = SubResource("AnimationLibrary_0kyhm")
+autoplay = &"Move 8"
+
+[node name="Boom" parent="." unique_id=181842211 instance=ExtResource("5_rvrwk")]
+position = Vector2(56, -64)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Boom" unique_id=543599633]
+libraries/ = SubResource("AnimationLibrary_ftthg")
+autoplay = &"Move 11"

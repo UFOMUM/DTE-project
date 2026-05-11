@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dgqwrawy4maq7"]
+
+[ext_resource type="Script" uid="uid://dl3blp7foq4at" path="res://newhell.gd" id="1_wi0ih"]
+
+[node name="Kill Zone" type="Area2D" unique_id=43065350]
+collision_layer = 0
+script = ExtResource("1_wi0ih")
+
+[node name="Timer" type="Timer" parent="." unique_id=571782753]
+wait_time = 0.001
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -16,7 +16,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2, 5, 8),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": ["Game Over", "That wasn't
+"values": ["Game Over.", "That wasn't
  Fun.", "I guess I'll 
 have to bring
  you back.", "Good Luck."]
@@ -72,6 +72,7 @@ text = "Game Over"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_fb13l")
+metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Label" unique_id=847850822]
 libraries/ = SubResource("AnimationLibrary_sk1k3")
