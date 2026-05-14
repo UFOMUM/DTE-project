@@ -526,6 +526,9 @@ shape = SubResource("WorldBoundaryShape2D_10xxw")
 
 [node name="Enemys" type="Node" parent="." unique_id=716164634]
 
+[node name="Follow_Enemy" parent="Enemys" unique_id=2005460956 instance=ExtResource("8_3q7lx")]
+position = Vector2(-120, 112)
+
 [node name="Enemy" parent="Enemys" unique_id=113761565 instance=ExtResource("6_10xxw")]
 position = Vector2(184, -16)
 
@@ -581,6 +584,3 @@ position = Vector2(56, -64)
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Enemys/Boom" unique_id=1798487429]
 libraries/ = SubResource("AnimationLibrary_elkpi")
 autoplay = &"move 11"
-
-[node name="Follow_Enemy" parent="." unique_id=2005460956 instance=ExtResource("8_3q7lx")]
-position = Vector2(0, 88)
