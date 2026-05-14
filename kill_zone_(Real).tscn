@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dgqwrawy4maq7"]
 
-[ext_resource type="Script" uid="uid://dl3blp7foq4at" path="res://Kill_Zone_(Real).gd" id="1_pplfu"]
+[ext_resource type="Script" uid="uid://dl3blp7foq4at" path="res://Scripts/Kill_Zone_(Real).gd" id="1_pplfu"]
 
 [node name="Kill Zone (Real)" type="Area2D" unique_id=43065350]
 collision_layer = 0

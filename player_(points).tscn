@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bhh0helluuc5l"]
 
-[ext_resource type="Script" uid="uid://7p1av0w6x5xo" path="res://Player_(Points).gd" id="1_uck3w"]
+[ext_resource type="Script" uid="uid://7p1av0w6x5xo" path="res://Scripts/Player_(Points).gd" id="1_uck3w"]
 [ext_resource type="Texture2D" uid="uid://dofqrixex0v3f" path="res://brackeys_platformer_assets/sprites/knight.png" id="2_hkiw0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_e80uo"]
@@ -50,7 +50,7 @@ radius = 21.023796
 
 [node name="Player (Points)" type="CharacterBody2D" unique_id=1246910048]
 scale = Vector2(0.64853716, 0.85586065)
-collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_uck3w")
 
 [node name="Animation Runing" type="AnimatedSprite2D" parent="." unique_id=1771853932]

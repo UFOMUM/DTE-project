@@ -9,4 +9,4 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _on_timer_timeout():
-	get_tree().change_scene_to_file("res://Game_(Fake).tscn")
+	get_tree().change_scene_to_file("res://Game_Over_(Fake).tscn")

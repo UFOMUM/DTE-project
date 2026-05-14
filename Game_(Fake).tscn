@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://cti7dm4ldyejs"]
 
-[ext_resource type="Script" uid="uid://dfi7wycb5itna" path="res://game_manger.gd" id="1_10xxw"]
+[ext_resource type="Script" uid="uid://dfi7wycb5itna" path="res://Scripts/game_manger.gd" id="1_10xxw"]
 [ext_resource type="FontFile" uid="uid://b6a1gu2cur82m" path="res://brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="2_3q7lx"]
 [ext_resource type="Texture2D" uid="uid://du4o1h2ogdtvx" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="3_75uuw"]
 [ext_resource type="PackedScene" uid="uid://bhh0helluuc5l" path="res://player_(points).tscn" id="4_10xxw"]
 [ext_resource type="PackedScene" uid="uid://n4uwefskk8sx" path="res://kill_zone_(Fake).tscn" id="5_10xxw"]
-[ext_resource type="PackedScene" uid="uid://boe4lrti11266" path="res://Enemy_(Fake).tscn" id="6_kg83i"]
-[ext_resource type="PackedScene" uid="uid://ds5tkma1h5avj" path="res://Boom_(Fake).tscn" id="7_pbt08"]
+[ext_resource type="PackedScene" uid="uid://boe4lrti11266" path="res://Enemy_(Fake).tscn" id="6_10xxw"]
+[ext_resource type="PackedScene" uid="uid://ds5tkma1h5avj" path="res://Boom_(Fake).tscn" id="7_3q7lx"]
+[ext_resource type="PackedScene" uid="uid://dg73lr5535307" path="res://Follow_Enemy_(Fake).tscn" id="8_3q7lx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u44n3"]
 texture = ExtResource("3_75uuw")
@@ -168,6 +169,10 @@ sources/0 = SubResource("TileSetAtlasSource_u44n3")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sb48q"]
 normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_10xxw"]
+normal = Vector2(-1, 0)
+distance = -1.9073484e-06
 
 [sub_resource type="Animation" id="Animation_sb48q"]
 resource_name = "Move 6"
@@ -511,60 +516,71 @@ scale = Vector2(1, 1.0000001)
 position = Vector2(-64.00001, 31.999998)
 shape = SubResource("WorldBoundaryShape2D_sb48q")
 
+[node name="Kill Zone (Fake)2" parent="." unique_id=1343871244 instance=ExtResource("5_10xxw")]
+position = Vector2(-1.9073486e-06, -1.9073486e-06)
+scale = Vector2(1, 1.0000001)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Kill Zone (Fake)2" unique_id=1857505345]
+position = Vector2(176, 31.999998)
+shape = SubResource("WorldBoundaryShape2D_10xxw")
+
 [node name="Enemys" type="Node" parent="." unique_id=716164634]
 
-[node name="Enemy" parent="Enemys" unique_id=113761565 instance=ExtResource("6_kg83i")]
+[node name="Enemy" parent="Enemys" unique_id=113761565 instance=ExtResource("6_10xxw")]
 position = Vector2(184, -16)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy" unique_id=1570959499]
 libraries/ = SubResource("AnimationLibrary_r0x5m")
 autoplay = &"Move 6"
 
-[node name="Enemy2" parent="Enemys" unique_id=1090441941 instance=ExtResource("6_kg83i")]
+[node name="Enemy2" parent="Enemys" unique_id=1090441941 instance=ExtResource("6_10xxw")]
 position = Vector2(216, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy2" unique_id=504508401]
 libraries/ = SubResource("AnimationLibrary_2vekm")
 autoplay = &"Move 5"
 
-[node name="Enemy3" parent="Enemys" unique_id=1270671176 instance=ExtResource("6_kg83i")]
+[node name="Enemy3" parent="Enemys" unique_id=1270671176 instance=ExtResource("6_10xxw")]
 position = Vector2(184, 16)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy3" unique_id=1547792353]
 libraries/ = SubResource("AnimationLibrary_gwjdr")
 autoplay = &"Move 4"
 
-[node name="Enemy4" parent="Enemys" unique_id=1401585196 instance=ExtResource("6_kg83i")]
+[node name="Enemy4" parent="Enemys" unique_id=1401585196 instance=ExtResource("6_10xxw")]
 position = Vector2(248, 32)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy4" unique_id=1363965404]
 libraries/ = SubResource("AnimationLibrary_qjyg3")
 autoplay = &"Move 3"
 
-[node name="Enemy7" parent="Enemys" unique_id=1417289445 instance=ExtResource("6_kg83i")]
+[node name="Enemy7" parent="Enemys" unique_id=1417289445 instance=ExtResource("6_10xxw")]
 position = Vector2(200, 32)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy7" unique_id=1925463382]
 libraries/ = SubResource("AnimationLibrary_yx171")
 autoplay = &"Move 7"
 
-[node name="Enemy5" parent="Enemys" unique_id=1023477841 instance=ExtResource("6_kg83i")]
+[node name="Enemy5" parent="Enemys" unique_id=1023477841 instance=ExtResource("6_10xxw")]
 position = Vector2(232, 48)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy5" unique_id=1596909963]
 libraries/ = SubResource("AnimationLibrary_wuoie")
 autoplay = &"Move 2"
 
-[node name="Enemy6" parent="Enemys" unique_id=1174978248 instance=ExtResource("6_kg83i")]
+[node name="Enemy6" parent="Enemys" unique_id=1174978248 instance=ExtResource("6_10xxw")]
 position = Vector2(200, 64)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Enemys/Enemy6" unique_id=1355417281]
 libraries/ = SubResource("AnimationLibrary_hmewc")
 autoplay = &"Move 1"
 
-[node name="Boom" parent="Enemys" unique_id=181842211 instance=ExtResource("7_pbt08")]
+[node name="Boom" parent="Enemys" unique_id=181842211 instance=ExtResource("7_3q7lx")]
 position = Vector2(56, -64)
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Enemys/Boom" unique_id=1798487429]
 libraries/ = SubResource("AnimationLibrary_elkpi")
 autoplay = &"move 11"
+
+[node name="Follow_Enemy" parent="." unique_id=2005460956 instance=ExtResource("8_3q7lx")]
+position = Vector2(0, 88)

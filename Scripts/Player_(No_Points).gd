@@ -1,12 +1,9 @@
 extends CharacterBody2D
 
 @export var speed: float = 100.0
-@onready var game_manger: Node = %GameManger
 
-func _on_area_2d_body_entered(body):
-	game_manger.add_point()
-func _on_area_2d_2_body_entered(body):
-	game_manger.add_point()
+func _ready():
+	add_to_group("player")
 
 func _physics_process(_delta: float) -> void:
 	# 1. Get the input direction using the built-in Vector2 helper

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c0uwc3ajgpsc2"]
 
 [ext_resource type="FontFile" uid="uid://b6a1gu2cur82m" path="res://brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_o8od6"]
-[ext_resource type="Script" uid="uid://bvre50wrh0w8" path="res://Text_Fake_Death.gd" id="2_rn48p"]
+[ext_resource type="Script" uid="uid://bvre50wrh0w8" path="res://Scripts/Text_Fake_Death.gd" id="2_rn48p"]
 
 [sub_resource type="Animation" id="Animation_fb13l"]
 resource_name = "Game On"
