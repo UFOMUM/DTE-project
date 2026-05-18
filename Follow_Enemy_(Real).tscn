@@ -1,23 +1,23 @@
-[gd_scene format=3 uid="uid://dg73lr5535307"]
+[gd_scene format=3 uid="uid://d0tmje88ufsaa"]
 
-[ext_resource type="Script" uid="uid://1jmpceo7ujpg" path="res://Scripts/Follow_Enemy.gd" id="1_gxc0l"]
-[ext_resource type="Texture2D" uid="uid://b73g36on5pvp4" path="res://brackeys_platformer_assets/sprites/slime_green.png" id="2_s1kit"]
-[ext_resource type="PackedScene" uid="uid://n4uwefskk8sx" path="res://kill_zone_(Fake).tscn" id="3_s1kit"]
+[ext_resource type="Script" uid="uid://1jmpceo7ujpg" path="res://Scripts/Follow_Enemy.gd" id="1_40jt1"]
+[ext_resource type="Texture2D" uid="uid://b73g36on5pvp4" path="res://brackeys_platformer_assets/sprites/slime_green.png" id="2_s7ua1"]
+[ext_resource type="PackedScene" uid="uid://dgqwrawy4maq7" path="res://kill_zone_(Real).tscn" id="3_3c75x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_37lj4"]
-atlas = ExtResource("2_s1kit")
+atlas = ExtResource("2_s7ua1")
 region = Rect2(0, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y68t2"]
-atlas = ExtResource("2_s1kit")
+atlas = ExtResource("2_s7ua1")
 region = Rect2(24, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fbxrl"]
-atlas = ExtResource("2_s1kit")
+atlas = ExtResource("2_s7ua1")
 region = Rect2(48, 24, 24, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fkros"]
-atlas = ExtResource("2_s1kit")
+atlas = ExtResource("2_s7ua1")
 region = Rect2(72, 24, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6u22d"]
@@ -46,9 +46,9 @@ size = Vector2(8, 13)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6s8k"]
 size = Vector2(10, 15)
 
-[node name="Follow_Enemy_(Fake)" type="CharacterBody2D" unique_id=2005460956]
+[node name="Follow_Enemy_(Real)" type="CharacterBody2D" unique_id=2005460956]
 collision_layer = 0
-script = ExtResource("1_gxc0l")
+script = ExtResource("1_40jt1")
 
 [node name="Animation Moving" type="AnimatedSprite2D" parent="." unique_id=1527366613]
 sprite_frames = SubResource("SpriteFrames_6u22d")
@@ -59,8 +59,8 @@ frame_progress = 0.39972755
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_7wjl6")
 
-[node name="Kill Zone (Fake)" parent="." unique_id=43065350 instance=ExtResource("3_s1kit")]
+[node name="Kill Zone (Real)" parent="." unique_id=43065350 instance=ExtResource("3_3c75x")]
 
-[node name="Kill Collision" type="CollisionShape2D" parent="Kill Zone (Fake)" unique_id=643687608]
+[node name="Kill Collision" type="CollisionShape2D" parent="Kill Zone (Real)" unique_id=643687608]
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_u6s8k")

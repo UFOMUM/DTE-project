@@ -4,6 +4,13 @@
 
 [node name="Game Over (Real)" type="Node2D" unique_id=1203460943]
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1293048050]
+offset_left = -576.0
+offset_top = -328.0
+offset_right = 576.0
+offset_bottom = 328.0
+color = Color(0, 0, 0, 1)
+
 [node name="Camera" type="Camera2D" parent="." unique_id=155134689]
 
 [node name="Text" type="Label" parent="." unique_id=1263336048]

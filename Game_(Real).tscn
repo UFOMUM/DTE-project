@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dgqwrawy4maq7" path="res://kill_zone_(Real).tscn" id="3_wux8i"]
 [ext_resource type="PackedScene" uid="uid://dhufj25rcxyp6" path="res://Enemy_(Real).tscn" id="4_fku75"]
 [ext_resource type="PackedScene" uid="uid://dn2oj57m3nakx" path="res://Boom_(Real).tscn" id="5_w7w0j"]
+[ext_resource type="PackedScene" uid="uid://d0tmje88ufsaa" path="res://Follow_Enemy_(Real).tscn" id="6_w7w0j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lqsby"]
 texture = ExtResource("1_fku75")
@@ -654,3 +655,6 @@ position = Vector2(56, 88)
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Enemys/Boom 2" unique_id=1874578913]
 libraries/ = SubResource("AnimationLibrary_ftthg")
 autoplay = &"Move 11"
+
+[node name="Follow_Enemy_(Real)" parent="Enemys" unique_id=2005460956 instance=ExtResource("6_w7w0j")]
+position = Vector2(-184, 176)

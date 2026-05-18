@@ -40,10 +40,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hac7"]
-size = Vector2(10, 14)
+size = Vector2(10, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7bn3"]
-size = Vector2(10, 14)
+size = Vector2(10, 12)
 
 [node name="Enemy (Real)" type="Node2D" unique_id=113761565]
 
@@ -51,7 +51,7 @@ size = Vector2(10, 14)
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_6do27")
 autoplay = "default"
-frame_progress = 0.63119704
+frame_progress = 0.87818056
 
 [node name="Kill Zone" parent="." unique_id=43065350 instance=ExtResource("2_chsd3")]
 
