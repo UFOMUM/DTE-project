@@ -1,6 +1,6 @@
 extends Node
 
-@onready var label_2: Label = $Label2
+@onready var pause_lable: Label = $"Pause Lable"
 
 
 func _ready():
@@ -22,14 +22,7 @@ func toggle_pause():
 	# Optional: Debug console feedback
 	if get_tree().paused:
 		print("Game Paused")
-		label_2.visible = true
+		pause_lable.visible = true
 	else:
 		print("Game Resumed")
-		label_2.visible = false
-
-var score = 0
-@onready var label: Label = $Label
-
-func add_point():
-	score += 1
-	label.text = "Score " + str(score)
+		pause_lable.visible = false

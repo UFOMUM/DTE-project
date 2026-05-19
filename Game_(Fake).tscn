@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://b6a1gu2cur82m" path="res://brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="2_3q7lx"]
 [ext_resource type="Texture2D" uid="uid://du4o1h2ogdtvx" path="res://brackeys_platformer_assets/sprites/world_tileset.png" id="3_75uuw"]
 [ext_resource type="PackedScene" uid="uid://bhh0helluuc5l" path="res://player_(points).tscn" id="4_10xxw"]
+[ext_resource type="FontFile" uid="uid://bbefvicdam00k" path="res://brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="4_75uuw"]
 [ext_resource type="PackedScene" uid="uid://n4uwefskk8sx" path="res://kill_zone_(Fake).tscn" id="5_10xxw"]
 [ext_resource type="PackedScene" uid="uid://boe4lrti11266" path="res://Enemy_(Fake).tscn" id="6_10xxw"]
 [ext_resource type="PackedScene" uid="uid://ds5tkma1h5avj" path="res://Boom_(Fake).tscn" id="7_3q7lx"]
@@ -900,23 +901,6 @@ _data = {
 
 [node name="Game (Fake)" type="Node2D" unique_id=837545624]
 
-[node name="GameManger" type="Node" parent="." unique_id=1024584478]
-unique_name_in_owner = true
-script = ExtResource("1_10xxw")
-
-[node name="Label" type="Label" parent="GameManger" unique_id=72231391]
-offset_left = -48.0
-offset_top = -32.0
-offset_right = -8.0
-offset_bottom = -9.0
-theme_override_fonts/font = ExtResource("2_3q7lx")
-text = "Score="
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=196384845]
-position = Vector2(60, 16)
-scale = Vector2(0.651936, -0.91355234)
-zoom = Vector2(5, 5)
-
 [node name="TileMap" type="TileMap" parent="." unique_id=2082093415]
 position = Vector2(0, -1)
 tile_set = SubResource("TileSet_sb48q")
@@ -925,6 +909,11 @@ layer_0/name = "Layer1"
 layer_0/tile_data = PackedInt32Array(327676, 65536, 15, 262140, 65536, 14, 196604, 65536, 13, 131068, 65536, 13, 65532, 65536, 13, -4, 65536, 13, -65540, 65536, 12, -131076, 65536, 11, -131075, 65536, 11, -131074, 65536, 11, -131073, 65536, 11, -196608, 65536, 11, -196607, 65536, 11, -196606, 65536, 11, -196605, 65536, 11, -196604, 65536, 11, -196603, 65536, 11, -196602, 65536, 11, -196601, 65536, 11, -196600, 65536, 11, -196599, 65536, 11, -196598, 65536, 11, -131062, 65536, 12, -131063, 65536, 12, -131064, 65536, 12, -131065, 65536, 12, -131066, 65536, 12, -131067, 65536, 12, -131068, 65536, 12, -131069, 65536, 12, -131070, 65536, 12, -131071, 65536, 12, -131072, 65536, 12, -65537, 65536, 12, -65538, 65536, 12, -65539, 65536, 12, -3, 65536, 13, -2, 65536, 13, -1, 65536, 13, -65536, 65536, 13, 0, 65536, 13, 1, 65536, 13, 2, 65536, 13, 3, 65536, 13, 4, 65536, 13, 5, 65536, 13, 6, 65536, 13, 7, 65536, 13, 8, 65536, 13, 9, 65536, 13, 10, 65536, 13, -65526, 65536, 13, -65527, 65536, 13, -65528, 65536, 13, -65529, 65536, 13, -65530, 65536, 13, -65531, 65536, 13, -65532, 65536, 13, -65533, 65536, 13, -65534, 65536, 13, -65535, 65536, 13, 65534, 65536, 13, 65533, 65536, 13, 65535, 65536, 13, 65546, 65536, 13, 65545, 65536, 13, 65544, 65536, 13, 65543, 65536, 13, 65542, 65536, 13, 65541, 65536, 13, 65540, 65536, 13, 65539, 65536, 13, 65538, 65536, 13, 65537, 65536, 13, 65536, 65536, 13, 131071, 65536, 13, 131070, 65536, 13, 131069, 65536, 13, 196605, 65536, 13, 196606, 65536, 13, 196607, 65536, 13, 131072, 65536, 13, 131073, 65536, 13, 131074, 65536, 13, 131075, 65536, 13, 131076, 65536, 13, 131077, 65536, 13, 131078, 65536, 13, 131079, 65536, 13, 131080, 65536, 13, 131081, 65536, 13, 131082, 65536, 13, 196618, 65536, 14, 196617, 65536, 14, 196616, 65536, 14, 196615, 65536, 14, 196614, 65536, 14, 196613, 65536, 14, 196612, 65536, 14, 196611, 65536, 14, 196610, 65536, 14, 196609, 65536, 14, 196608, 65536, 14, 262143, 65536, 14, 262142, 65536, 14, 262141, 65536, 14, 327677, 65536, 15, 327678, 65536, 15, 327679, 65536, 15, 262144, 65536, 15, 262145, 65536, 15, 262146, 65536, 15, 262147, 65536, 15, 262148, 65536, 15, 262149, 65536, 15, 262150, 65536, 15, 262151, 65536, 15, 262152, 65536, 15, 262153, 65536, 15, 262154, 65536, 15, -131061, 0, 9, -65523, 0, 9, 11, 0, 9, 65551, 0, 9, 131086, 0, 9, 196620, 0, 9, 65548, 0, 9, -65541, 0, 9, 65531, 0, 9, 65530, 0, 9, 131066, 0, 9, 131065, 0, 9, 196601, 0, 9, -65543, 0, 9, 25, 0, 9, 24, 0, 9, 65560, 0, 9, 65559, 0, 9, 131095, 0, 9, -131047, 0, 9, -131049, 0, 9, -131050, 0, 9, -65544, 0, 9, 65527, 0, 9, 196599, 0, 9, 262134, 0, 9, -65546, 0, 9, 196597, 0, 9, 131061, 0, 9, 262132, 0, 9, -12, 0, 9, 131059, 0, 9, 65522, 0, 9, -65550, 0, 9, 262130, 0, 9, 131057, 0, 9, 196592, 0, 9, -16, 0, 9, -17, 0, 9, 131054, 0, 9, 262126, 0, 9, 65517, 0, 9, -65555, 0, 9, -65522, 0, 9, -131056, 0, 9, 16, 0, 9, -65518, 0, 9, 65553, 0, 9, 196624, 0, 9, 196626, 0, 9, 131091, 0, 9, 65555, 0, 9, 21, 0, 9, 131093, 0, 9, 196628, 0, 9, -131052, 0, 9)
 layer_1/name = "Layer0"
 layer_1/tile_data = PackedInt32Array(-131073, 262144, 1, 327679, 262144, 1, -196608, 262144, 1, -196607, 262144, 1, -196606, 262144, 1, -196604, 262144, 1, -196603, 262144, 1, -196605, 262144, 1, -196602, 262144, 1, -196601, 262144, 1, -196600, 262144, 1, -196599, 262144, 1, -196598, 262144, 1, 262144, 262144, 1, 262145, 262144, 1, 262146, 262144, 1, 262147, 262144, 1, 262148, 262144, 1, 262149, 262144, 1, 262150, 262144, 1, 262151, 262144, 1, 262152, 262144, 1, 262153, 262144, 1, 262154, 262144, 1, 327678, 262144, 1, 327677, 262144, 1, 327676, 262144, 1, -131074, 262144, 1, -131075, 262144, 1, -131076, 262144, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=196384845]
+position = Vector2(60, 16)
+scale = Vector2(0.651936, -0.91355234)
+zoom = Vector2(5, 5)
 
 [node name="Player (Points)" parent="." unique_id=1246910048 instance=ExtResource("4_10xxw")]
 
@@ -1043,3 +1032,28 @@ position = Vector2(56, -64)
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="Enemys/Boom" unique_id=1798487429]
 libraries/ = SubResource("AnimationLibrary_elkpi")
 autoplay = &"move 11"
+
+[node name="GameManger" type="Node" parent="." unique_id=1024584478]
+unique_name_in_owner = true
+script = ExtResource("1_10xxw")
+
+[node name="Label" type="Label" parent="GameManger" unique_id=72231391]
+offset_left = -48.0
+offset_top = -32.0
+offset_right = -8.0
+offset_bottom = -9.0
+theme_override_fonts/font = ExtResource("2_3q7lx")
+text = "Score="
+
+[node name="Label2" type="Label" parent="GameManger" unique_id=1216349945]
+visible = false
+top_level = true
+offset_left = -64.0
+offset_top = -48.0
+offset_right = 176.0
+offset_bottom = 80.0
+theme_override_fonts/font = ExtResource("4_75uuw")
+theme_override_font_sizes/font_size = 24
+text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
