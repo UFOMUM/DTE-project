@@ -41,10 +41,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7wjl6"]
-size = Vector2(8, 13)
+size = Vector2(5, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6s8k"]
-size = Vector2(10, 15)
+size = Vector2(8, 10)
 
 [node name="Follow_Enemy_(Real)" type="CharacterBody2D" unique_id=2005460956]
 collision_layer = 0
@@ -56,11 +56,11 @@ autoplay = "default"
 frame_progress = 0.39972755
 
 [node name="Physics Collision" type="CollisionShape2D" parent="." unique_id=553992677]
-position = Vector2(0, 4.5)
+position = Vector2(0.5, 6)
 shape = SubResource("RectangleShape2D_7wjl6")
 
 [node name="Kill Zone (Real)" parent="." unique_id=43065350 instance=ExtResource("3_3c75x")]
 
 [node name="Kill Collision" type="CollisionShape2D" parent="Kill Zone (Real)" unique_id=643687608]
-position = Vector2(0, 4.5)
+position = Vector2(0, 6)
 shape = SubResource("RectangleShape2D_u6s8k")

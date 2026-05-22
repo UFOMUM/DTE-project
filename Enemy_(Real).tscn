@@ -40,10 +40,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hac7"]
-size = Vector2(10, 12)
+size = Vector2(8, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s7bn3"]
-size = Vector2(10, 12)
+size = Vector2(8, 10)
 
 [node name="Enemy (Real)" type="Node2D" unique_id=113761565]
 
@@ -56,12 +56,12 @@ frame_progress = 0.87818056
 [node name="Kill Zone" parent="." unique_id=43065350 instance=ExtResource("2_chsd3")]
 
 [node name="Kill Collision" type="CollisionShape2D" parent="Kill Zone" unique_id=862583611]
-position = Vector2(0, -7)
+position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_2hac7")
 
 [node name="Score Body" type="StaticBody2D" parent="." unique_id=1312971347]
 collision_layer = 4
 
 [node name="Score Body Collision" type="CollisionShape2D" parent="Score Body" unique_id=969331927]
-position = Vector2(0, -7)
+position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_s7bn3")
