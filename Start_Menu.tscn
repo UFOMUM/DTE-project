@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://drjosw7gan0mw"]
+
+[ext_resource type="FontFile" uid="uid://b6a1gu2cur82m" path="res://brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_pbjr1"]
+[ext_resource type="Script" uid="uid://bjtf725c0km52" path="res://Scripts/Start_Menu.gd" id="2_xcwll"]
+
+[node name="Start_Menu" type="Camera2D" unique_id=393346664]
+script = ExtResource("2_xcwll")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1278039461]
+offset_left = -576.0
+offset_top = -328.0
+offset_right = 576.0
+offset_bottom = 328.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=846261809]
+offset_left = -384.0
+offset_top = -128.0
+offset_right = 384.0
+offset_bottom = 131.0
+theme_override_fonts/font = ExtResource("1_pbjr1")
+theme_override_font_sizes/font_size = 128
+text = "Click to
+Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2074907013]

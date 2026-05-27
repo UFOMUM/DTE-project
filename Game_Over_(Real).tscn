@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://cak7wec6k1yuv"]
 
 [ext_resource type="FontFile" uid="uid://b6a1gu2cur82m" path="res://brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_toauj"]
+[ext_resource type="Script" uid="uid://d1jx143m1w6kv" path="res://Scripts/Restart.gd" id="1_y6y5g"]
 
 [node name="Game Over (Real)" type="Node2D" unique_id=1203460943]
+script = ExtResource("1_y6y5g")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1293048050]
 offset_left = -576.0

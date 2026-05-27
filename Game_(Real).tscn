@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dhufj25rcxyp6" path="res://Enemy_(Real).tscn" id="4_fku75"]
 [ext_resource type="PackedScene" uid="uid://dn2oj57m3nakx" path="res://Boom_(Real).tscn" id="5_w7w0j"]
 [ext_resource type="PackedScene" uid="uid://d0tmje88ufsaa" path="res://Follow_Enemy_(Real).tscn" id="6_w7w0j"]
-[ext_resource type="Script" uid="uid://cagcvn4io4h18" path="res://Pause.gd" id="7_egh3n"]
+[ext_resource type="Script" uid="uid://cagcvn4io4h18" path="res://Scripts/Pause.gd" id="7_egh3n"]
 [ext_resource type="FontFile" uid="uid://bbefvicdam00k" path="res://brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="8_e5dsb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lqsby"]
@@ -659,7 +659,7 @@ libraries/ = SubResource("AnimationLibrary_ftthg")
 autoplay = &"Move 11"
 
 [node name="Follow_Enemy_(Real)" parent="Enemys" unique_id=2005460956 instance=ExtResource("6_w7w0j")]
-position = Vector2(-184, 176)
+position = Vector2(-120, 112)
 
 [node name="Pause" type="Node" parent="." unique_id=175189039]
 unique_name_in_owner = true
