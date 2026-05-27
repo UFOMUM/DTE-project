@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://b6a1gu2cur82m" path="res://brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_toauj"]
 [ext_resource type="Script" uid="uid://d1jx143m1w6kv" path="res://Scripts/Restart.gd" id="1_y6y5g"]
+[ext_resource type="AudioStream" uid="uid://dhggc800xgdcs" path="res://brackeys_platformer_assets/sounds/lightyeartraxx-kl-peach-game-over-iii-142453.mp3" id="3_dsfac"]
 
 [node name="Game Over (Real)" type="Node2D" unique_id=1203460943]
 script = ExtResource("1_y6y5g")
@@ -26,5 +27,9 @@ text = "Game Over."
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1821533019]
+stream = ExtResource("3_dsfac")
+autoplay = true
 
 [connection signal="mouse_entered" from="Text" to="Text" method="_on_mouse_entered"]

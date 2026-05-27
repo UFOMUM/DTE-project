@@ -2,10 +2,11 @@
 
 [ext_resource type="FontFile" uid="uid://b6a1gu2cur82m" path="res://brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_o8od6"]
 [ext_resource type="Script" uid="uid://bvre50wrh0w8" path="res://Scripts/Text_Fake_Death.gd" id="2_rn48p"]
+[ext_resource type="AudioStream" uid="uid://dhggc800xgdcs" path="res://brackeys_platformer_assets/sounds/lightyeartraxx-kl-peach-game-over-iii-142453.mp3" id="3_rn48p"]
 
 [sub_resource type="Animation" id="Animation_fb13l"]
 resource_name = "Game On"
-length = 11.0
+length = 13.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -13,7 +14,7 @@ tracks/0/path = NodePath(".:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2, 5, 8),
+"times": PackedFloat32Array(0, 4, 7.0333333, 10),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": ["Game Over.", "That wasn't
@@ -28,12 +29,24 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(11),
+"times": PackedFloat32Array(13),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [0],
 "method": &"_on_area_2d_mouse_shape_exited"
 }]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AudioStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_oonl0"]
@@ -49,6 +62,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": ["Game Over"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AudioStreamPlayer2D:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sk1k3"]
@@ -84,5 +109,8 @@ metadata/_edit_use_anchors_ = true
 [node name="Kill" type="AnimationPlayer" parent="Text" unique_id=847850822]
 libraries/ = SubResource("AnimationLibrary_sk1k3")
 autoplay = &"Game On"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=204749074]
+stream = ExtResource("3_rn48p")
 
 [connection signal="mouse_entered" from="Text" to="Text" method="_on_mouse_entered"]

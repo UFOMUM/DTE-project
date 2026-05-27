@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://boe4lrti11266" path="res://Enemy_(Fake).tscn" id="6_10xxw"]
 [ext_resource type="PackedScene" uid="uid://ds5tkma1h5avj" path="res://Boom_(Fake).tscn" id="7_3q7lx"]
 [ext_resource type="PackedScene" uid="uid://dg73lr5535307" path="res://Follow_Enemy_(Fake).tscn" id="8_3q7lx"]
+[ext_resource type="AudioStream" uid="uid://ydeu3n6x3cbf" path="res://brackeys_platformer_assets/music/hitslab-gaming-game-minecraft-background-music-278382.mp3" id="10_5vecv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u44n3"]
 texture = ExtResource("3_75uuw")
@@ -1039,3 +1040,7 @@ theme_override_font_sizes/font_size = 24
 text = "Paused"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1023935642]
+stream = ExtResource("10_5vecv")
+autoplay = true
